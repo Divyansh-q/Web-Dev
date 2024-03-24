@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./AddProduct.css";
 import upload_area from "../Assets/upload_area.svg";
-import { api } from "../../../../e-commerce-frontend/src/backend";
+import { api } from "../../backend";
+// import { api } from "../../../../e-commerce-frontend/src/backend";
 
 const AddProduct = () => {
 

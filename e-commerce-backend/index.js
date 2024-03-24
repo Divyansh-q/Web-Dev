@@ -6,7 +6,8 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
-const { api } = require("../e-commerce-frontend/src/backend");
+// const { api } = require("../e-commerce-frontend/src/backend");
+const api = "https://web-dev-rl3p.onrender.com/"
 
 app.use(express.json());
 app.use(cors());
