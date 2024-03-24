@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const { api } = require("../e-commerce-frontend/src/backend");
 
 app.use(express.json());
 app.use(cors());
@@ -27,7 +28,7 @@ const upload = multer({storage: storage})
 app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        image_url: `http://localhost:4000/images/${req.file.filename}`
+        image_url: `${api}images/${req.file.filename}`
     })
 })
 app.use('/images', express.static('upload/images'));

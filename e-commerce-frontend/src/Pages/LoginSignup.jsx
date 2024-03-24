@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CSS/LoginSignup.css";
+import { api } from "../backend";
 
 const LoginSignup = () => {
 
@@ -12,7 +13,7 @@ const LoginSignup = () => {
 
   const login = async () => {
     let dataObj;
-    await fetch('https://web-dev-server.vercel.app/login', {
+    await fetch(`${api}login`, {
       method: 'POST',
       headers: {
         Accept:'application/form-data',
@@ -35,7 +36,7 @@ const LoginSignup = () => {
 
   const signup = async () => {
     let dataObj;
-    await fetch('http://localhost:4000/signup', {
+    await fetch(`${api}signup`, {
       method: 'POST',
       headers: {
         Accept:'application/form-data',

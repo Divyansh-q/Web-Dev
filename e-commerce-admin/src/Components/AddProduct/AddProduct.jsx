@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./AddProduct.css";
 import upload_area from "../Assets/upload_area.svg";
+import { api } from "../../../../e-commerce-frontend/src/backend";
 
 const AddProduct = () => {
 
@@ -21,7 +22,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append('product', image);
     
-    await fetch('http://localhost:4000/upload', {
+    await fetch(`${api}upload`, {
       method: 'POST',
       headers: {
         Accept:'application/json',
@@ -34,7 +35,7 @@ const AddProduct = () => {
     if (dataObj.success) {
       product.image = dataObj.image_url;
       console.log(product);
-      await fetch('http://localhost:4000/addproduct', {
+      await fetch(`${api}addproduct`, {
       method: 'POST',
       headers: {
         Accept:'application/json',
